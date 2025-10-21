@@ -47,12 +47,14 @@ class App_PG:
             self.entry_author.focus_set()
         else:
             self.add_book()
+            self.entry_title.focus_set()
 
     def add_book_or_focus_author(self):
         if not self.author_var.get().strip():
             self.entry_author.focus_set()
         else:
             self.add_book()
+            self.entry_title.focus_set()
 
     def refresh_list(self):
         self.listbox.delete(0, tk.END)
