@@ -5,6 +5,3 @@ class Book_PG:
 
     def get_info(self):
         return f"{self.title} - {self.author}"
-
-    def rename(self, new_title):
-        self.title = new_title
