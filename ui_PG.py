@@ -34,9 +34,12 @@ class App_PG:
     def add_book(self):
         title = self.input_var.get().strip()
         if title:
-            self.books = PG_add_book(title, self.books)
-            self.refresh_list()
-            self.input_var.set("")
+            if title in self.books:
+                messagebox.showwarning("Figyelem", "Ez a könyv már szerepel a listában!")
+            else:
+                self.books = PG_add_book(title, self.books)
+                self.refresh_list()
+                self.input_var.set("")
         else:
             messagebox.showwarning("Figyelem", "Nem adhatod hozzá az üres könyvcímet!")
 
